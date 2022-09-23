@@ -20,7 +20,7 @@ prime bitstring bigint 3391050601613190613378084052422250933492987908325377
 
 This variant creates a bigint whose hex value is a string of hex encoded primes.
 
- ./primestringHex 100
+ ./primestringHex 100  
 hex  2  
 hex  3  
 hex  5  
