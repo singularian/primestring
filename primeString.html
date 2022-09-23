@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.min.js'></script>
+
+<script>
+"use strict";
+
+function isPrime(n) {
+    var sqrtn = Math.sqrt(n);
+
+    for (var i = 2; i <= sqrtn; i++)
+        if (n % i === 0) return false;
+    return true;
+}
+
+
+// https://github.com/MikeMcl/bignumber.js
+function solve(form){
+let bigint0 = 1n;
+let bigint1 = 1n;
+let number  = 1;
+let number2 = 1;
+let primestring0 = "";
+let primestring1 = "";
+var zero="0";
+var one="1";
+var bits0=""; 
+var bits1=""; 
+var hex=""; 
+
+let primeNum = eval(form.P.value);
+
+while (number <= primeNum) {
+      if (isPrime(number2) && number2 >= 2) {
+        bits0=zero.repeat(number2);
+        bits1=one.repeat(number2);
+	primestring0 += bits0; 
+        primestring0 += one;
+        primestring1 += bits1; 
+        primestring1 += zero;
+
+        number++;
+      }
+      number2++;
+}  
+
+bigint0 = new BigNumber(primestring0, 2);
+form.PS0.value = primestring0;
+form.P0.value  = bigint0.toFixed(0);
+
+bigint1 = new BigNumber(primestring1, 2);
+form.PS1.value = primestring1;
+form.P1.value = bigint1.toFixed(0);
+
+
+}
+
+function reset(form) {}
+
+</script>
+<html>
+<body class=main>
+
+<form name="form">
+  <div align="center">
+  <h1>Bigint Primestring Calculator</h1>
+    <center>
+  <table border="0" width="900" cellspacing="0" cellpadding="0">
+    <tr class=cel>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Prime Numbers</td>
+      <td class="cel">
+      <input TYPE="text" NAME="P" SIZE="10" VALUE="10"> </td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Primestring Bin 0</td>
+      <td class="cel">
+      <input TYPE="text" NAME="PS0" SIZE="100" VALUE="10"> 
+      </td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Primestring Bin 1</td>
+      <td class="cel">
+      <input TYPE="text" NAME="PS1" SIZE="100" VALUE="0"></td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Primestring Hex</td>
+      <td class="cel">
+      <input TYPE="text" NAME="PSH" SIZE="100" VALUE="0"></td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Bigint Primestring 0</td>
+      <td class="cel"><input TYPE="text" NAME="P0" SIZE="100"></td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Bigint Primestring 1</td>
+      <td class="cel"><input TYPE="text" NAME="P1" SIZE="100"></td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Bigint</td>
+      <td class="cel"><input TYPE="text" NAME="B" SIZE="100"></td>
+    </tr>
+    <tr>
+      <td colspan="2" class="cel"> &nbsp;<input type="button" value="Solve" onClick="solve(form)"><input type="button" value="Reset" onClick="reset(form)"> </td>
+    </tr>
+  </table>
+
+    </center>
+  </div>
+</form>
+
+</body>
+
+</html>
