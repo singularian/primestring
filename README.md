@@ -28,9 +28,15 @@ prime bitstring bigint 2595260104894187739584209022383644315017711787704318
 # Usage Primestring Hex
 
 This variant creates a bigint whose hex value is a string of hex encoded primes.  
-The hex primes are separated by a zero.
+The hex primes are separated by a zero.  
 
-prime  2  hex  2  
+Primestringhex Usage:  
+
+./primestringhex [Number]  
+
+primestringhex 100  
+
+prime  2  hex  2   
 prime  3  hex  3  
 prime  5  hex  5  
 prime  7  hex  7  
