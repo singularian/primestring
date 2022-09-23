@@ -22,6 +22,7 @@ all:
 	go build $(LDFLAGS) -o primestring1 primestring1.go 
 #	go build $(LDFLAGS) -o primestringtwo primestringTwo.go 
 	go build $(LDFLAGS) -o primestringhex primestringHex.go 
+	go build $(LDFLAGS) -o bigint bigint.go 
 
 clean:
 	rm -r primestring primestringtwo primestringhex
