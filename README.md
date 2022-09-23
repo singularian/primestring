@@ -2,10 +2,9 @@
 
 A program to generate integers or hex numbers whose bits or numbers form the prime number sequence.
 
-# Usage Primestring
+# Usage Primestring Zero
 
 This primestring variant encodes a bit string where the consecutive 0 numbers form a prime number.
-It could also be the inverse. 1 to encode the prime number and 0 to separate them.  
 
 Primestring Usage:
 
@@ -16,7 +15,17 @@ server$ ./primestring 11
 prime bitstring buffer 1001000100000100000001000000000001000000000000010000000000000000010000000000000000000100000000000000000000000100000000000000000000000000000100000000000000000000000000000001  
 prime bitstring bigint 3391050601613190613378084052422250933492987908325377
 
-# Ussage
+# Usage Primestring One
+
+Primestring1 Usage:
+
+./primestring1 [Number]
+
+server$ ./primestring1 11
+prime bitstring buffer  0110111011111011111110111111111110111111111111101111111111111111101111111111111111111011111111111111111111111011111111111111111111111111111011111111111111111111111111111110
+prime bitstring bigint 2595260104894187739584209022383644315017711787704318
+
+# Ussage primestring Hex
 
 This variant creates a bigint whose hex value is a string of hex encoded primes.  
 The hex primes are separated by a zero.

@@ -19,6 +19,7 @@ LDFLAGS=-ldflags "-X main.Version=${VERSION} -X main.BuildTime=${BUILD_TIME}"
 
 all:
 	go build $(LDFLAGS) -o primestring primestring.go 
+	go build $(LDFLAGS) -o primestring1 primestring1.go 
 #	go build $(LDFLAGS) -o primestringtwo primestringTwo.go 
 	go build $(LDFLAGS) -o primestringhex primestringHex.go 
 
