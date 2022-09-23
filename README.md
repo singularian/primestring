@@ -66,7 +66,7 @@ prime bitstring bigint 152666111912089629363177312659251963929345675710981557734
 
 # Usage Bigint
 
-This converts an input bigint back to binary or hex.  
+This converts an input bigint back to binary or hex to identify the list of prime numbers.  
 
 Usage bigint [bigint]  
 
