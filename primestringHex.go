@@ -81,6 +81,15 @@ func primesToBin(arr []int) int {
 
 func main() {
 
+      var argsNumber int = len(os.Args)
+
+      if argsNumber == 1 {
+         fmt.Println("Primestring Hex Usage: \n")
+         fmt.Println(os.Args[0],  "[Number]")
+         fmt.Println("\nserver$ ./primestringHex 11")
+         os.Exit(0)
+      }
+
       // argCount := len(os.Args[1:])
       for i := range os.Args {
          arg := os.Args[i]
