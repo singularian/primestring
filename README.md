@@ -5,7 +5,7 @@ A program to generate integers or hex numbers whose bits or numbers form the pri
 # Usage Primestring
 
 This primestring variant encodes a bit string where the consecutive 0 numbers form a prime number.
-It could also be the inverse
+It could also be the inverse. 1 to encode the prime number and 0 to separate them.  
 
 Primestring Usage:
 
@@ -19,6 +19,7 @@ prime bitstring bigint 3391050601613190613378084052422250933492987908325377
 # Ussage
 
 This variant creates a bigint whose hex value is a string of hex encoded primes.  
+The hex primes are separated by a zero.
 
 prime  2  hex  2  
 prime  3  hex  3  
