@@ -19,6 +19,7 @@ let bigint0 = 1n;
 let bigint1 = 1n;
 let number  = 1;
 let number2 = 1;
+let primestringlist = "";
 let primestring0 = "";
 let primestring1 = "";
 var zero="0";
@@ -33,6 +34,8 @@ while (number <= primeNum) {
       if (isPrime(number2) && number2 >= 2) {
         bits0=zero.repeat(number2);
         bits1=one.repeat(number2);
+        primestringlist += number2;
+        primestringlist += " ";
 	primestring0 += bits0; 
         primestring0 += one;
         primestring1 += bits1; 
@@ -42,6 +45,8 @@ while (number <= primeNum) {
       }
       number2++;
 }  
+
+form.PL.value = primestringlist;
 
 bigint0 = new BigNumber(primestring0, 2);
 form.PS0.value = primestring0;
@@ -70,38 +75,55 @@ function reset(form) {}
     <tr>
       <td class="cel">&nbsp;Prime Numbers</td>
       <td class="cel">
-      <input TYPE="text" NAME="P" SIZE="10" VALUE="10"> </td>
+      <input TYPE="text" NAME="P" SIZE="10" VALUE="10"> 
+      </td>
+    </tr>
+    <tr>
+      <td class="cel">&nbsp;Primes</td>
+      <td class="cel">
+      <textarea id="PL" rows="4" cols="100"></textarea>
+      </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Primestring Bin 0</td>
       <td class="cel">
-      <input TYPE="text" NAME="PS0" SIZE="100" VALUE="10"> 
+      <textarea id="PS0" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Primestring Bin 1</td>
       <td class="cel">
-      <input TYPE="text" NAME="PS1" SIZE="100" VALUE="0"></td>
+      <textarea id="PS1" rows="4" cols="100"></textarea>
+      </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Primestring Hex</td>
       <td class="cel">
-      <input TYPE="text" NAME="PSH" SIZE="100" VALUE="0"></td>
+      <textarea id="PSH" rows="4" cols="100"></textarea>
+     </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Bigint Primestring 0</td>
-      <td class="cel"><input TYPE="text" NAME="P0" SIZE="100"></td>
+      <td class="cel">
+      <textarea id="P0" rows="4" cols="100"></textarea>
+      </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Bigint Primestring 1</td>
-      <td class="cel"><input TYPE="text" NAME="P1" SIZE="100"></td>
+      <td class="cel">
+      <textarea id="P1" rows="4" cols="100"></textarea>
+      </td>
     </tr>
     <tr>
       <td class="cel">&nbsp;Bigint</td>
-      <td class="cel"><input TYPE="text" NAME="B" SIZE="100"></td>
+      <td class="cel"><textarea id="B" rows="4" cols="100"></textarea></td>
     </tr>
     <tr>
-      <td colspan="2" class="cel"> &nbsp;<input type="button" value="Solve" onClick="solve(form)"><input type="button" value="Reset" onClick="reset(form)"> </td>
+      <td class="cel"></td>
+      <td colspan="2" class="cel"> &nbsp;
+      <input type="button" value="Solve" onClick="solve(form)">
+      <input type="button" value="Reset" onClick="reset(form)"> 
+      </td>
     </tr>
   </table>
 
