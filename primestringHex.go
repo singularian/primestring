@@ -58,7 +58,7 @@ func primesToBin(arr []int) int {
 
       buffer.WriteString("0")
 
-      fmt.Println("hex ", h)
+      fmt.Println("prime ", prime, " hex ", h)
 
    }
 
