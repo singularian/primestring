@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<style>
+label {
+  width: 250px;
+  display: inline-block;
+  padding-right: 5px;
+}
+</style>
 <script src='https://cdn.jsdelivr.net/npm/bignumber.js@9.1.0/bignumber.min.js'></script>
 
 <script>
@@ -59,6 +66,17 @@ form.P1.value = bigint1.toFixed(0);
 
 }
 
+function convertToPrimestring(form){
+let bigint = 1n;
+let primestring   = form.BIGINT.value;
+let base          = form.BASE.value;
+var baseInt       = parseInt(base, 10);
+
+const binaryRepresentation = BigInt(primestring).toString(baseInt);
+
+form.PS.value = binaryRepresentation;
+}
+
 function reset(form) {}
 
 </script>
@@ -69,53 +87,53 @@ function reset(form) {}
   <div align="center">
   <h1>Bigint Primestring Calculator</h1>
     <center>
-  <table border="0" width="900" cellspacing="0" cellpadding="0">
+  <table border="0" width="auto" cellspacing="3" cellpadding="3">
     <tr class=cel>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Prime Numbers</td>
+      <td class="label">&nbsp;Prime Numbers</td>
       <td class="cel">
       <input TYPE="text" NAME="P" SIZE="10" VALUE="10"> 
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Primes</td>
+      <td class="label">&nbsp;Primes</td>
       <td class="cel">
       <textarea id="PL" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Primestring Bin 0</td>
+      <td class="label">&nbsp;Primestring Bin 0</td>
       <td class="cel">
       <textarea id="PS0" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Primestring Bin 1</td>
+      <td class="label">&nbsp;Primestring Bin 1</td>
       <td class="cel">
       <textarea id="PS1" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Primestring Hex</td>
+      <td class="label">&nbsp;Primestring Hex</td>
       <td class="cel">
       <textarea id="PSH" rows="4" cols="100"></textarea>
      </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Bigint Primestring 0</td>
+      <td class="label">&nbsp;Bigint Primestring 0</td>
       <td class="cel">
       <textarea id="P0" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Bigint Primestring 1</td>
+      <td class="label">&nbsp;Bigint Primestring 1</td>
       <td class="cel">
       <textarea id="P1" rows="4" cols="100"></textarea>
       </td>
     </tr>
     <tr>
-      <td class="cel">&nbsp;Bigint</td>
+      <td class="label">&nbsp;Bigint</td>
       <td class="cel"><textarea id="B" rows="4" cols="100"></textarea></td>
     </tr>
     <tr>
@@ -123,6 +141,45 @@ function reset(form) {}
       <td colspan="2" class="cel"> &nbsp;
       <input type="button" value="Solve" onClick="solve(form)">
       <input type="button" value="Reset" onClick="reset(form)"> 
+      </td>
+    </tr>
+  </table>
+
+    </center>
+  </div>
+</form>
+
+
+<form name="form2">
+  <div align="center">
+  <h1>Bigint To Primestring Calculator</h1>
+    <center>
+  <table border="0" width="auto" cellspacing="3" cellpadding="3">
+    <tr class=cel>
+    </tr>
+    <tr>
+      <td class="label">&nbsp;Primestring Bigint</td>
+      <td class="cel">
+      <textarea id="BIGINT" rows="4" cols="100">604256080671722940072465926032430565687294</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">&nbsp;Primestring Base</td>
+      <td class="cel">
+      <textarea id="BASE" rows="4" cols="100">2</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="label">&nbsp;Primestring</td>
+      <td class="cel">
+      <textarea id="PS" rows="4" cols="100">0</textarea>
+      </td>
+    </tr>
+    <tr>
+      <td class="cel"></td>
+      <td colspan="2" class="cel"> &nbsp;
+      <input type="button" value="Solve" onClick="convertToPrimestring(form2)">
+      <input type="button" value="Reset" onClick="reset(form2)"> 
       </td>
     </tr>
   </table>
