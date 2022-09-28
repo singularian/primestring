@@ -88,3 +88,7 @@ bigint bin  10000000110000010100000111000010110000110100000001000100000001001100
 # Javascript Primestring Calculator
 
 https://singularian.github.io/primeString.html
+
+# Williams Formula
+
+https://github.com/Py10lolz/willans-formula
